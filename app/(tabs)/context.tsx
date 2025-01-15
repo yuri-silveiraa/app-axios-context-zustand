@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/auth";
 import { ageReducer } from "../../reducers/age";
 import { User } from "../../types/user";
 import { ThemeContext } from "../../contexts/theme";
+import { useCounter } from "../../store/counter";
 
 export default function Screen() {
     const [ageReducerState, ageReducerDispacth] = useReducer(ageReducer, 10)

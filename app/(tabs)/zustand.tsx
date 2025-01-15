@@ -1,9 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Button } from "../../components/button";
+import { useCounter } from "../../store/counter";
 
 export default function Screen() {
+    const count = useCounter()
+
+    const handClick = () => {
+        count.setCount(50)
+    }
+
     return (
-        <Text></Text>
+        <View style={styles.container}>
+            <Text>CONTAGEM: {count.count}</Text>
+            <Button title="Incrementar" onPress={count.increment} />
+            <Button title="Decrementar" onPress={count.decrement} />
+            <Button title="setar 50" onPress={handClick} />
+        </View>
     )
 }
 
